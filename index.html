@@ -3,13 +3,12 @@
 <head>
 <style>
   .ifrm{
-    width:80%;
+    width:100%;
     height:500px;
-    position:absolute;
     margin:0 auto;
     left:0px;
     right:0px;
-    top:100px;
+    border:1px solid #ccc;
   }
 </style>
 <script>
@@ -37,17 +36,10 @@ function OptanonWrapper() { }
   
 <script>
 document.cookie = "cookie2 = 1";
-
 document.cookie = "cookie3=value3;secure";
-
-  
-  sessionStorage.setItem('session1', 'valor1');
-  localStorage.setItem('local1', 'valor1');
+sessionStorage.setItem('session1', 'valor1');
+localStorage.setItem('local1', 'valor1');
 </script>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
 
 </body>
 </html>
