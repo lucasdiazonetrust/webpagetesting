@@ -25,17 +25,23 @@ h6{
 <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
 <!-- OneTrust Cookies Settings button end -->
 
-<h6>script al principio del body</h6>
-<!-- OneTrust Cookies Consent Notice start for lucasdiazonetrust.github.io -->
-<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="01946532-6e86-7396-b155-2ff63a0054a4-test" ></script>
-<script type="text/javascript">
-function OptanonWrapper() { }
-</script>
-<!-- OneTrust Cookies Consent Notice end for lucasdiazonetrust.github.io -->
+<h6>script con delay</h6>
+    <script>
+        // Function to load the script
+        function loadScriptWithDelay(src, delay) {
+            setTimeout(function() {
+		    console.log("loading OT script");
+                var script = document.createElement('script');
+                script.src = https://cdn.cookielaw.org/scripttemplates/otSDKStub.js;
+                document.head.appendChild(script);
+            }, delay);
+        }
 
-<!-- OneTrust Cookies List start -->
-<div id="ot-sdk-cookie-policy"></div>
-<!-- OneTrust Cookies List end -->
-	
+        // Load the script after a delay of 3000 milliseconds (3 seconds)
+        loadScriptWithDelay('path/to/your/script.js', 3000);
+    </script>
+
+<!--<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="01946532-6e86-7396-b155-2ff63a0054a4-test" ></script>-->
+
 </body>
 </html>
