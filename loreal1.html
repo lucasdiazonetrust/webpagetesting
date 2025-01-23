@@ -25,20 +25,20 @@ h6{
 <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
 <!-- OneTrust Cookies Settings button end -->
 
-<h6>script con delay</h6>
+<h6>script con delay 2</h6>
     <script>
-        // Function to load the script
+
         function loadScriptWithDelay(src, delay) {
             setTimeout(function() {
 		    console.log("loading OT script");
                 var script = document.createElement('script');
-                script.src = https://cdn.cookielaw.org/scripttemplates/otSDKStub.js;
+                script.src = src;
                 document.head.appendChild(script);
             }, delay);
         }
 
         // Load the script after a delay of 3000 milliseconds (3 seconds)
-        loadScriptWithDelay('path/to/your/script.js', 3000);
+        loadScriptWithDelay('https://cdn.cookielaw.org/scripttemplates/otSDKStub.js', 3000);
     </script>
 
 <!--<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="01946532-6e86-7396-b155-2ff63a0054a4-test" ></script>-->
