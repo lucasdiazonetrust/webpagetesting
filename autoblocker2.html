@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autoblocking youtube videos with placeholder (2)</title>
+    <link rel="stylesheet" href="styles.css" />
+	
+<!-- OneTrust Cookies Consent Notice start for lucasdiazonetrust.github.io/webpagetesting/ 
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="0195a465-fa72-7c2b-b66d-fb0b91df4132-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+ OneTrust Cookies Consent Notice end for lucasdiazonetrust.github.io/webpagetesting/ -->
 
+<!-- OneTrust Cookies Consent Notice start for lucasdiazonetrust.github.io/webpagetesting/ -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/0195a465-fa72-7c2b-b66d-fb0b91df4132-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="0195a465-fa72-7c2b-b66d-fb0b91df4132-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for lucasdiazonetrust.github.io/webpagetesting/ -->
+
+
+	  
+<style>
+p, h1, h2, h3, h4, h5, h6, a{
+    font-family: arial, verdana, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+iframe{
+	margin: 0 auto;
+    	display: block;	
+}
+#placeholder{
+		
+}
+#warning {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+#warning img {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+}
+	#warning p{}
+	#warning a{}
+</style>
+
+<script type='text/plain' class='optanon-category-C0002'>
+document.cookie = "functional-cookie1"+"="+"1234";
+</script>
+
+
+<script type='text/plain' src="cookie_write.js" class='optanon-category-C0004'>
+</script>
+
+  </head>
+  <body>
+	<p>Autoblocking youtube 2</p>
+
+	<div id="placeholder"><br> <div id="warning"> 
+		<img src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/warning_26a0-fe0f.png" alt="warning">
+		<p>Content not working due to Targeting Category not being enabled.</p>
+		<a href="#" onclick="enableTargeting();">Enable Targeting Cookies</a> 
+	</div>
+	<script type="text/plain" class="optanon-category-C0004">
+		document.getElementById("warning").style.display = "none";
+	</script> 
+	
+	<iframe width="560" height="315" data-src="https://www.youtube.com/embed/kXNqE7U6UKM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br> </div><br>
+	
+	<script> 
+		function enableTargeting() {
+	 		OneTrust.UpdateConsent("Category","C0004:1"); 
+		}
+	</script>
+
+	  
+	  
+  </body>
+</html>
