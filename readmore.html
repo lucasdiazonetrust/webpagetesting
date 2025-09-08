@@ -4,21 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read More Toggle</title>
+
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    section.read-more-container {
+      max-width: 600px;
+      margin: auto;
+    }
+
     .content {
       overflow: hidden;
-      max-height: 60px; /* collapsed height */
+      max-height: 80px;
       transition: max-height 0.3s ease;
     }
+
     .content.expanded {
-      max-height: 500px; /* expanded height */
+      max-height: 1000px;
     }
+
     .read-more {
-      color: blue;
+      display: inline-block;
+      margin-top: 10px;
+      color: #007BFF;
       cursor: pointer;
       text-decoration: underline;
     }
+
+    @media (max-width: 600px) {
+      .content {
+        max-height: 100px;
+      }
+    }
   </style>
+  
 </head>
 <body>
   <p>
@@ -27,7 +51,7 @@
     overflow: inherit;
     }
   </p>
-
+<div class="container">
   <p class="content" id="paragraph">
     2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -48,15 +72,19 @@
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
   </p>
-  <span class="read-more" id="toggle">Read more</span>
+  </div>
+  <a href="#" class="read-more" id="toggle" aria-expanded="false">Read more</a>
 
   <script>
     const paragraph = document.getElementById('paragraph');
     const toggle = document.getElementById('toggle');
 
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent page jump
       paragraph.classList.toggle('expanded');
-      toggle.textContent = paragraph.classList.contains('expanded') ? 'Read less' : 'Read more';
+      const expanded = paragraph.classList.contains('expanded');
+      toggle.textContent = expanded ? 'Read less' : 'Read more';
+      toggle.setAttribute('aria-expanded', expanded);
     });
   </script>
 
