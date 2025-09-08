@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Read More Toggle</title>
+  <style>
+    .content {
+      overflow: hidden;
+      max-height: 60px; /* collapsed height */
+      transition: max-height 0.3s ease;
+    }
+    .content.expanded {
+      max-height: 500px; /* expanded height */
+    }
+    .read-more {
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="content" id="paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </p>
+  <span class="read-more" id="toggle">Read more</span>
+
+  <script>
+    const paragraph = document.getElementById('paragraph');
+    const toggle = document.getElementById('toggle');
+
+    toggle.addEventListener('click', () => {
+      paragraph.classList.toggle('expanded');
+      toggle.textContent = paragraph.classList.contains('expanded') ? 'Read less' : 'Read more';
+    });
+  </script>
+
+</body>
+</html>
