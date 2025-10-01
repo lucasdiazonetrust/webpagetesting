@@ -57,7 +57,7 @@ const jwt = `${encodedHeaders}.${encodedPayload}.${encodedSignature}`
 console.log({jwt})
   
 const paragraph = document.querySelector('[class="jwt_text"]');
-paragraph.innerHTML = jwt;
+paragraph.innerHTML = "jwt value:" + jwt;
   
 </script>
 
@@ -71,11 +71,8 @@ paragraph.innerHTML = jwt;
 <button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
 <!-- OneTrust Cookies Settings button end -->
 
-<hr>
 
-<!-- OneTrust Cookies List start -->
-<div id="ot-sdk-cookie-policy"></div>
-<!-- OneTrust Cookies List end -->
+
 
 
 	
