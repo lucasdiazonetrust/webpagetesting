@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1'>
+<link rel="icon" type="image/x-icon" href="favicon2.ico">
+
+
+<!--<script>
+var OneTrust = {
+      dataSubjectParams: {
+          isAnonymous: false
+      }
+};
+</script>-->
+	
+<!-- OneTrust Cookies Consent Notice start for lucasdiazonetrust.github.io/webpagetesting/dashboarding.html -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/0195470c-23a2-7614-bea6-e004a1f4fb1a-test/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="0195470c-23a2-7614-bea6-e004a1f4fb1a-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for lucasdiazonetrust.github.io/webpagetesting/dashboarding.html -->
+	
+<title>JWT generator</title>
+</head>
+<body>
+<script>
+const HMACSHA256 = (stringToSign, secret) => "not_implemented"
+
+// The header typically consists of two parts: 
+// the type of the token, which is JWT, and the signing algorithm being used, 
+// such as HMAC SHA256 or RSA.
+const header = {
+  "alg": "HS256",
+  "typ": "JWT"
+}
+const encodedHeaders = btoa(JSON.stringify(header))
+
+
+// The second part of the token is the payload, which contains the claims.
+// Claims are statements about an entity (typically, the user) and 
+// additional data. There are three types of claims: 
+// registered, public, and private claims.
+const claims = {
+    "role": "admin"
+}
+const encodedPayload = btoa(JSON.stringify(claims))
+
+
+// create the signature part you have to take the encoded header, 
+// the encoded payload, a secret, the algorithm specified in the header, 
+// and sign that.
+const signature = HMACSHA256(`${encodedHeaders}.${encodedPayload}`, "mysecret")
+const encodedSignature = btoa(signature)
+
+const jwt = `${encodedHeaders}.${encodedPayload}.${encodedSignature}`
+console.log({jwt})
+  
+const paragraph = document.querySelector('[class="jwt_text"]');
+paragraph.innerHTML = jwt;
+  
+</script>
+
+	
+<h1>JWT generator</h1>
+
+<p class="jwt_text"></p>
+
+
+<!-- OneTrust Cookies Settings button start -->
+<button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
+<!-- OneTrust Cookies Settings button end -->
+
+<hr>
+
+<!-- OneTrust Cookies List start -->
+<div id="ot-sdk-cookie-policy"></div>
+<!-- OneTrust Cookies List end -->
+
+
+	
+</body>
+</html>
