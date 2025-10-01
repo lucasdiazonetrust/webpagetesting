@@ -44,8 +44,10 @@ const encodedHeaders = btoa(JSON.stringify(header))
 // Claims are statements about an entity (typically, the user) and 
 // additional data. There are three types of claims: 
 // registered, public, and private claims.
-const claims = "ucpmconnectiontest7@onetrust.com"
-const encodedPayload = btoa(claims);
+const claims = {
+    "sub": "ucpmconnectiontest7@onetrust.com"
+}
+const encodedPayload = btoa(JSON.stringify(claims))
 
 
 // create the signature part you have to take the encoded header, 
