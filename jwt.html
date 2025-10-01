@@ -44,16 +44,14 @@ const encodedHeaders = btoa(JSON.stringify(header))
 // Claims are statements about an entity (typically, the user) and 
 // additional data. There are three types of claims: 
 // registered, public, and private claims.
-const claims = {
-    "role": "admin"
-}
-const encodedPayload = btoa(JSON.stringify(claims))
+const claims = "ucpmconnectiontest7@onetrust.com"
+const encodedPayload = btoa(claims);
 
 
 // create the signature part you have to take the encoded header, 
 // the encoded payload, a secret, the algorithm specified in the header, 
 // and sign that.
-const signature = HMACSHA256(`${encodedHeaders}.${encodedPayload}`, "mysecret")
+const signature = HMACSHA256(`${encodedHeaders}.${encodedPayload}`, "b7f3c1a4e2d8f9a1c6e7b3d4a9f2c8e1d3b6a7c9f0e4d1b2a8c3f7e6d5b1a0c9")
 const encodedSignature = btoa(signature)
 
 const jwt = `${encodedHeaders}.${encodedPayload}.${encodedSignature}`
