@@ -27,17 +27,39 @@ function OptanonWrapper() { }
 <body>
 
 <h1>Form 1</h1>
-  
-  <form name="form1" data-ot-cp-id="2576ce77-8736-493a-9a10-04266d903bc8-draft">
-    <input name="user_name" type="text"/><br>
-    <input name="user_lastname" type="text"/><br>
-	<input type="checkbox" name="subscribe" value="yes"/><br>
-	  
-    <input type="submit" value="submit form"/>
-    
-  </form>
+  <hr>
+<form class="ot-form-consent" action="" method="post" data-ot-cp-id="2576ce77-8736-493a-9a10-04266d903bc8-active">
+      <input type="hidden" id="confirmation" name="receiptId" value="" />
+      <label for="inputEmail">text input no validation</label>
+  <input type="text" id="inputEmail" class="ot-form-control" placeholder="text input no validation" required>
+      <label for="user_lastname">LastName</label>
+  <input type="text" name="user_lastname" class="ot-form-control" placeholder="LastName">
+      <div class="ot-checkbox">
+    <label>
+      <input name="subscribe" type="checkbox" > Newsletter
+    </label>
+  </div>
+  <div class="ot-ml-1"><h5>frequency</h5>
+    <div class="ot-checkbox">
+      <label>
+        <input value="daily" type="checkbox" > daily
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="weekly" type="checkbox" > weekly
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="monthly" type="checkbox" > monthly
+      </label>
+    </div>
+  </div>
+      <button id="trigger" class="ot-submit-button" type="submit">Submit form</button>
+</form>
 
-	
+	<hr>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TNqBv9h4_4Y?si=uL7FMKIHR6t7J1ey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <hr>
