@@ -76,7 +76,7 @@ async function generateJWT(payload, secret) {
   const signature = await crypto.subtle.sign('HMAC', key, encodeUTF8(dataT));
   const encodedSignature = base64url(signature);
 
-  return dataT + "." + encodedSignature`;
+  return dataT + "." + encodedSignature;
 }
 
 
