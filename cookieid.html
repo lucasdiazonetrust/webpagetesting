@@ -36,10 +36,10 @@ function OptanonWrapper() { }
 <script>
 //generating the OT identifier
 
-function pushDS(){
+function saveParams(){
 	
 var cook = OneTrust.getDataSubjectId();
-console.log("OT user: "+cook);
+sessionStorage.setItem('cook', cook);
 
 // Helper: Base64URL encode
 function base64url(source) {
@@ -79,17 +79,26 @@ async function generateJWT(payload, secret) {
   return dataT + "." + encodedSignature;
 }
 
-//generating the JWT
+//generating the JWT and saving to session storage
 var jwtgenerated = generateJWT({ sub: cook}, 'b7f3c1a4e2d8f9a1c6e7b3d4a9f2c8e1d3b6a7c9f0e4d1b2a8c3f7e6d5b1a0c9').then(tokenT => sessionStorage.setItem('tokenT', tokenT));
 
+	
 //pushing  the datasubject asynchronously
-console.log("cookieID:" + cook + " --- " + "jwtgenerated: " + sessionStorage.getItem('tokenT'));
-
-OneTrust.syncConsentProfile(cook, sessionStorage.getItem('tokenT'), false);
+console.log("Saved params to session storage- cookieID:" + sessionStorage.getItem('cook') + " --- " + "jwtgenerated: " + sessionStorage.getItem('tokenT'));
 }
+
+function pushDS(){
+	var cookPush = sessionStorage.getItem('cook');
+	var tokenTPush = sessionStorage.getItem('tokenT');
+	console.log("pushing params to synconsentprofiles method: "cookPush + " - tokenTPush: " + tokenTPush);
+	OneTrust.syncConsentProfile(cookPush, tokenTPush, false);
+}
+
+	
 </script>  
 
-<input type="button" onClick="pushDS();" value="push DS to OT async"/>
+<input type="button" onClick="saveParams();" value="save parameters to session storage"/>
+	<input type="button" onClick="pushDS();" value="push DS to OT"/>
 	
 <hr>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TNqBv9h4_4Y?si=uL7FMKIHR6t7J1ey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
