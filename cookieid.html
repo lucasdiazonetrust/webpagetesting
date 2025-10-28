@@ -139,10 +139,10 @@ console.log("Saved params to session storage- cookieID:" + sessionStorage.getIte
 
 	
 	<script>
-function pushDS(){
+function pushDSubject(){
 	var cookPush = sessionStorage.getItem('cook');
 	var tokenTPush = sessionStorage.getItem('tokenT');
-	console.log("pushing params to synconsentprofiles method: "cookPush + " - tokenTPush: " + tokenTPush);
+	console.log("pushing params to synconsentprofiles method: " + cookPush + " - tokenTPush: " + tokenTPush);
 	OneTrust.syncConsentProfile(cookPush, tokenTPush, false);
 }
 
@@ -150,7 +150,7 @@ function pushDS(){
 </script>  
 
 <input type="button" onClick="saveParams();" value="save parameters to session storage"/>
-<input type="button" onClick="pushDS();" value="push DS to OT"/>
+<input type="button" onClick="pushDSubject();" value="push DS to OT"/>
 	
 <hr>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TNqBv9h4_4Y?si=uL7FMKIHR6t7J1ey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
