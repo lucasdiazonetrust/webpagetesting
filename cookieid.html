@@ -33,7 +33,7 @@ function OptanonWrapper() { }
 	
 <h1>cookieid</h1>
 	
-<script>
+<!--<script>
 //generating the OT identifier
 
 function saveParams(){
@@ -86,7 +86,59 @@ var jwtgenerated = generateJWT({ sub: cook}, 'b7f3c1a4e2d8f9a1c6e7b3d4a9f2c8e1d3
 //pushing  the datasubject asynchronously
 console.log("Saved params to session storage- cookieID:" + sessionStorage.getItem('cook') + " --- " + "jwtgenerated: " + sessionStorage.getItem('tokenT'));
 }
+</script>-->
 
+<script>
+	function saveParams() {
+  if (typeof OneTrust !== 'undefined' && OneTrust.getDataSubjectId) {
+    var cook = OneTrust.getDataSubjectId();
+    sessionStorage.setItem('cook', cook);
+
+    function base64url(source) {
+      return btoa(String.fromCharCode(...new Uint8Array(source)))
+        .replace(/=/g, '')
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_');
+    }
+
+    function encodeUTF8(str) {
+      return new TextEncoder().encode(str);
+    }
+
+    async function generateJWT(payload, secret) {
+      const header = { alg: 'HS256', typ: 'JWT' };
+      const encodedHeader = base64url(encodeUTF8(JSON.stringify(header)));
+      const encodedPayload = base64url(encodeUTF8(JSON.stringify(payload)));
+      const dataT = `${encodedHeader}.${encodedPayload}`;
+
+      const key = await crypto.subtle.importKey(
+        'raw',
+        encodeUTF8(secret),
+        { name: 'HMAC', hash: 'SHA-256' },
+        false,
+        ['sign']
+      );
+
+      const signature = await crypto.subtle.sign('HMAC', key, encodeUTF8(dataT));
+      const encodedSignature = base64url(signature);
+
+      return `${dataT}.${encodedSignature}`;
+    }
+
+    generateJWT({ sub: cook }, 'b7f3c1a4e2d8f9a1c6e7b3d4a9f2c8e1d3b6a7c9f0e4d1b2a8c3f7e6d5b1a0c9')
+      .then(tokenT => {
+        sessionStorage.setItem('tokenT', tokenT);
+        console.log("Saved params to session storage - cookieID: " + sessionStorage.getItem('cook') + " --- jwtgenerated: " + sessionStorage.getItem('tokenT'));
+      });
+
+  } else {
+    console.error("OneTrust no está disponible.");
+  }
+}
+</script>
+
+	
+	<script>
 function pushDS(){
 	var cookPush = sessionStorage.getItem('cook');
 	var tokenTPush = sessionStorage.getItem('tokenT');
@@ -98,7 +150,7 @@ function pushDS(){
 </script>  
 
 <input type="button" onClick="saveParams();" value="save parameters to session storage"/>
-	<input type="button" onClick="pushDS();" value="push DS to OT"/>
+<input type="button" onClick="pushDS();" value="push DS to OT"/>
 	
 <hr>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TNqBv9h4_4Y?si=uL7FMKIHR6t7J1ey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
