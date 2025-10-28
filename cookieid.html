@@ -83,8 +83,8 @@ async function generateJWT(payload, secret) {
 var jwtgenerated = generateJWT({ sub: '660e091b-728c-4062-92bd-30aa2f29eb7c'}, 'b7f3c1a4e2d8f9a1c6e7b3d4a9f2c8e1d3b6a7c9f0e4d1b2a8c3f7e6d5b1a0c9').then(tokenT => console.log('JWT:', tokenT));
 
 //pushing  the datasubject asynchronously
-console.log("cookieID:" + cook + "jwtgenerated: " + jwtgenerated)
-OneTrust.syncConsentProfile(cook, jwtgenerated, false);
+console.log("cookieID:" + cook + "jwtgenerated: " + tokenT)
+OneTrust.syncConsentProfile(cook, tokenT, false);
 }
 </script>  
 
