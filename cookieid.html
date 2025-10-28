@@ -33,9 +33,10 @@ function OptanonWrapper() { }
 	
 <h1>cookieid</h1>
 <script>
-var cook = OneTrust.getDataSubjectId();
-alert("OT user: "+cook);  
-  
+function getCookieId(){
+	var cook = OneTrust.getDataSubjectId();
+	alert("OT user: "+cook);  
+}
 </script>  
 	
 <hr>
