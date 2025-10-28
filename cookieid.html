@@ -32,8 +32,12 @@ function OptanonWrapper() { }
 <body>
 	
 <h1>cookieid</h1>
+	
 <script>
 //generating the OT identifier
+
+function pushDS(){
+	
 var cook = OneTrust.getDataSubjectId();
 console.log("OT user: "+cook);
 
@@ -80,11 +84,10 @@ var jwtgenerated = generateJWT({ sub: '660e091b-728c-4062-92bd-30aa2f29eb7c'}, '
 
 //pushing  the datasubject asynchronously
 OneTrust.syncConsentProfile(cook, jwtgenerated, false);
-	
+}
 </script>  
 
-<input type="button" onClick="getCookieId();" value="get cookieid value"/>
-<input type="button" onClick="generate();" value="generate token"/>
+<input type="button" onClick="pushDS();" value="push DS to OT async"/>
 	
 <hr>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TNqBv9h4_4Y?si=uL7FMKIHR6t7J1ey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
