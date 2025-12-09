@@ -24,22 +24,23 @@ function OptanonWrapper() { }
 <body>
 
 <h1>Form 1</h1>
-  <hr>
 
+	<form action="#" method="post" class="form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
 
-	<hr>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TNqBv9h4_4Y?si=uL7FMKIHR6t7J1ey" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <label for="second-name">Second Name:</label><br>
+        <input type="text" id="second-name" name="second-name" required><br><br>
 
-<hr>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-<iframe src="https://player.vimeo.com/video/76979871" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <label for="postal-code">Postal Code:</label><br>
+        <input type="text" id="postal-code" name="postal-code" pattern="[0-9]{4,10}" title="Enter a valid postal code" required><br><br>
 
+        <button type="submit">Submit</button>
+    </form>
 
-<!-- OneTrust Cookies Settings button start -->
-<button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>
-<!-- OneTrust Cookies Settings button end -->
-
-<hr>
 
 
 	
