@@ -4,11 +4,16 @@ body {
 
 /* Center the form on the page */
 form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    margin-top: 50px;
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 450px;
 }
 
 /* Style text inputs and checkboxes */
