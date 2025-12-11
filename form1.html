@@ -5,13 +5,23 @@
 <link rel="icon" type="image/x-icon" href="favicon2.ico">
 	
 <title>Form 1</title>
+
+<script
+  src="https://privacyportaltrial-cdn.onetrust.com/consent-receipt-scripts/scripts/otconsent-1.0.min.js"
+  type="text/javascript"
+  data-ot-id="9fe3f618-364c-41ed-b30e-744572025583"
+  charset="UTF-8"
+  id="consent-receipt-script"
+  data-ot-consent-register-event="document-load"
+></script>
+	
 </head>
 	
 <body>
 
 <h1>Form 1</h1>
 
-	<form action="#" method="post" class="form">
+	<form action="#" method="post" class="form" data-ot-cp-id="ce03cfbd-90a2-4cd7-9d44-af7d05e1390a-draft">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
 
@@ -24,6 +34,19 @@
         <label for="postal-code">Postal Code:</label><br>
         <input type="text" id="postal-code" name="postal-code" pattern="[0-9]{4,10}" title="Enter a valid postal code" required><br><br>
 
+    <label>
+      <input type="checkbox" name="newsletter" value="Newsletter">
+      Subscribe to Newsletter
+    </label>
+		
+    <br>
+		
+    <label>
+      <input type="checkbox" name="personalized_ads" value="Personalized advertising">
+      Personalized Advertising
+    </label>
+
+		
         <button type="submit">Submit</button>
     </form>
 	
