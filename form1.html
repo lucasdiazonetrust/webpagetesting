@@ -21,34 +21,71 @@
 
 <h1>Form 1</h1>
 
-	<form action="#" method="get" class="form" data-ot-cp-id="ce03cfbd-90a2-4cd7-9d44-af7d05e1390a-draft">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="second-name">Second Name:</label><br>
-        <input type="text" id="second-name" name="second-name" required><br><br>
-
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="postal-code">Postal Code:</label><br>
-        <input type="text" id="postal-code" name="postal-code" pattern="[0-9]{4,10}" title="Enter a valid postal code" required><br><br>
-
+	<form class="ot-form-consent" action="" method="post" data-ot-cp-id="ce03cfbd-90a2-4cd7-9d44-af7d05e1390a-draft">
+      <input type="hidden" id="confirmation" name="receiptId" value="" />
+      <label for="email">Email</label>
+  <input type="email" id="email" class="ot-form-control" placeholder="Email" required>
+      <label for="name">Name</label>
+  <input type="text" id="name" class="ot-form-control" placeholder="Name">
+  <label for="second-name">LastName</label>
+  <input type="text" id="second-name" class="ot-form-control" placeholder="LastName">
+  <label for="postal-code">CountryCode</label>
+  <input type="text" id="postal-code" class="ot-form-control" placeholder="CountryCode">
+      <div class="ot-checkbox">
     <label>
-      <input type="checkbox" name="newsletter" value="Newsletter">
-      Subscribe to Newsletter
+      <input value="Newsletter" type="checkbox" > Newsletter
     </label>
-		
-    <br>
-		
+  </div>
+  <div class="ot-ml-1"><h5>frequency</h5>
+    <div class="ot-checkbox">
+      <label>
+        <input value="daily" type="checkbox" > daily
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="weekly" type="checkbox" > weekly
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="monthly" type="checkbox" > monthly
+      </label>
+    </div>
+  </div><div class="ot-checkbox">
     <label>
-      <input type="checkbox" name="personalized_ads" value="Personalized advertising">
-      Personalized Advertising
+      <input value="Personalized advertising" type="checkbox" > Personalized advertising
     </label>
-
-		
-        <button type="submit">Submit</button>
-    </form>
+  </div>
+  <div class="ot-ml-1"><h5>Personalized ads platforms</h5>
+    <div class="ot-checkbox">
+      <label>
+        <input value="Google Ads" type="checkbox" > Google Ads
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="Facebook Ads" type="checkbox" > Facebook Ads
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="Instagram Ads" type="checkbox" > Instagram Ads
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="Bing Ads" type="checkbox" > Bing Ads
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="LinkedIn Ads" type="checkbox" > LinkedIn Ads
+      </label>
+    </div>
+  </div>
+      <button id="trigger" class="ot-submit-button" type="submit">Submit form</button>
+</form>
 	
 </body>
 </html>
