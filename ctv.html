@@ -22,7 +22,8 @@ OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
      console.log('Download Status: ' + status);
      if (status !== 200 || error) {
          console.log('Download Error: ' + JSON.stringify(error));
-         OneTrust.showBannerUI('self');
+
+         OneTrust.showBannerUI();
          return;
      }
      console.log('Response: ' + JSON.stringify(response));
@@ -32,7 +33,7 @@ OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
     </script>
 
    <script>
-       OneTrust.showBannerUI();
+       
 
        OneTrust.setRemoteKeys({    
         ArrowUp: 'UP',    
