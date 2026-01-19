@@ -33,9 +33,24 @@ OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
 
    <script>
        OneTrust.showBannerUI();
+
+       OneTrust.setRemoteKeys({    
+        ArrowUp: 'UP',    
+        ArrowDown: 'DOWN',    
+        ArrowRight: 'RIGHT',    
+        ArrowLeft: 'LEFT',    
+        Enter: 'OK',    
+        Backspace: 'BACK',    
+        38: 'UP',    
+        40: 'DOWN',    
+        39: 'RIGHT',    
+        37: 'LEFT',    
+        13: 'OK',    
+        8: 'BACK',    
+        10009: 'BACK',    
+        461: 'BACK', 
+        });
    </script>
-
-
 
 
     </body>
