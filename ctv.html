@@ -8,23 +8,16 @@
         <div id="root"></div>
     <script src="onetrust.js"></script>
     <script>
-        oneTrustTV.Settings({
-            key: '019bc73c-8305-7bba-a2c4-35b2f80f8cac',
-            languageCode: 'en',
-            version: '202601.1.0',
-            storageLocation: 'cdn.cookielaw.org',
-            identifier: 'DLIDUS',
-         // identifierType: '',
-        //  syncProfileAuth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkhBIEFQSSJ9.eyJzdWIiOiJUZXN0aW5nQ1RWVW5pZmllZENvbnNlbnQifQ.ZkahAwX2fuhQNQ-t5KQmqpoyQopp9ZId1guovUfpVDE',
-          //syncProfile:'true',
-         // shouldCreateProfile:'true',
-         countryCodeOverride: 'CA', //optional
-        regionCodeOverride: '', //optional
-            redirect: '' //optional if app is an SPA
-          });
-         oneTrustTV.setupUI(document.getElementById('root'), 'BANNER', null, () => null);
-    oneTrustTV.showBannerUI(document.getElementById('root'), 'BANNER', null, () => null);
-       
+const oneTrustHeaders = {    'OT-CDN-Location': 'cdn.cookielaw.org',    
+                         'OT-APP-Id': '019bc73c-8305-7bba-a2c4-35b2f80f8cac',    
+                         'OT-Language': '',    
+                         'OT-SDK-Version': '',    
+                         'OT-Device-Type': '',    
+                         'OT-Country-Code': '',
+                         //optional    'OT-Region-Code': '' //optional} OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
+                         console.log('Download Status: ' + status);     if (status !== 200 || error) {         console.log('Download Error: ' + JSON.stringify(error));         return;     
+                                                                                                     }     
+        console.log('Response: ' + JSON.stringify(response));     return; });
     </script>
 
    
