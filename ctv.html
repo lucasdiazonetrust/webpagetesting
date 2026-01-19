@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+   
+    </head>
+    <body>
+        <div id="root"></div>
+    <script src="onetrust.js"></script>
+    <script>
+        oneTrustTV.Settings({
+            key: '9e4e42bb-fb90-433a-a5cc-160e9b35ed0d-test',
+            languageCode: 'en',
+            version: '202404.1.0',
+            storageLocation: 'cdn.cookielaw.org',
+            identifier: 'DLIDUS',
+         // identifierType: '',
+        //  syncProfileAuth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkhBIEFQSSJ9.eyJzdWIiOiJUZXN0aW5nQ1RWVW5pZmllZENvbnNlbnQifQ.ZkahAwX2fuhQNQ-t5KQmqpoyQopp9ZId1guovUfpVDE',
+          //syncProfile:'true',
+         // shouldCreateProfile:'true',
+         countryCodeOverride: 'CA', //optional
+        regionCodeOverride: '', //optional
+            redirect: '' //optional if app is an SPA
+          });
+         oneTrustTV.setupUI(document.getElementById('root'), 'BANNER', null, () => null);
+    oneTrustTV.showBannerUI(document.getElementById('root'), 'BANNER', null, () => null);
+       
+    </script>
+
+   
+     <script>
+        oneTrustTV.setRemoteKeycodes({
+     "37": "left",
+     "38": "up",
+     "39": "right",
+    "40": "down",
+     "13": "ok",
+     "8": "back"
+});
+</script>
+
+
+
+    </body>
+
+</html>
