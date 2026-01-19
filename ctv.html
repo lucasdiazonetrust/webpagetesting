@@ -8,20 +8,23 @@
         <div id="root"></div>
     <script src="onetrust.js"></script>
     <script>
-const oneTrustHeaders = {    'OT-CDN-Location': 'cdn.cookielaw.org',    
-                         'OT-APP-Id': '019bc73c-8305-7bba-a2c4-35b2f80f8cac',    
-                         'OT-Language': 'EN',    
-                         'OT-SDK-Version': '202601.1.0',    
-                         'OT-Device-Type': 'CTV',    
-                         'OT-Country-Code': 'ES'
-                         //optional    'OT-Region-Code': '' 
+const oneTrustHeaders = {    
+    'OT-CDN-Location': 'cdn.cookielaw.org',    
+    'OT-APP-Id': '019bc73c-8305-7bba-a2c4-35b2f80f8cac',    
+    'OT-Language': 'EN',    
+    'OT-SDK-Version': '202601.1.0',    
+    'OT-Device-Type': 'CTV',    
+    'OT-Country-Code': 'ES'
+    //optional    'OT-Region-Code': '' 
                         } 
     OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
     console.log('Download Status: ' + status);     if (status !== 200 || error) {         
-    console.log('Download Error: ' + JSON.stringify(error));         
+    console.log('Download Error: ' + JSON.stringify(error));
+    OneTrust.showBannerUI('self');
         return;     
     }  
     console.log('Response: ' + JSON.stringify(response));     return; });
+        
     </script>
 
    
