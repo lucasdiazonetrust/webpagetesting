@@ -13,17 +13,21 @@ const oneTrustHeaders = {
     'OT-APP-Id': '019bc73c-8305-7bba-a2c4-35b2f80f8cac',    
     'OT-Language': 'EN',    
     'OT-SDK-Version': '202601.1.0',    
-    'OT-Device-Type': 'CTV',    
+    'OT-Device-Type': 'ctv',    
     'OT-Country-Code': 'ES'
     //optional    'OT-Region-Code': '' 
-                        } 
-    OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
-    console.log('Download Status: ' + status);     if (status !== 200 || error) {         
-    console.log('Download Error: ' + JSON.stringify(error));
-    OneTrust.showBannerUI('self');
-        return;     
-    }  
-    console.log('Response: ' + JSON.stringify(response));     return; });
+    } 
+        
+OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
+     console.log('Download Status: ' + status);
+     if (status !== 200 || error) {
+         console.log('Download Error: ' + JSON.stringify(error));
+         OneTrust.showBannerUI('self');
+         return;
+     }
+     console.log('Response: ' + JSON.stringify(response));
+     return;
+});
         
     </script>
 
