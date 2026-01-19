@@ -22,11 +22,12 @@ OneTrust.startSDK(oneTrustHeaders, function (status, response, error) {
      console.log('Download Status: ' + status);
      if (status !== 200 || error) {
          console.log('Download Error: ' + JSON.stringify(error));
-
-         OneTrust.showBannerUI();
+        OneTrust.showBannerUI('self');
+        
          return;
      }
      console.log('Response: ' + JSON.stringify(response));
+    OneTrust.showBannerUI();
      return;
 });
         
