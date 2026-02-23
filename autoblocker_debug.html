@@ -15,6 +15,10 @@ function OptanonWrapper() { }
 </head>
 <body>
 
+<style>
+
+</style>
+  
 <!--
 <iframe
   src="https://players.brightcove.net/1507807800001/rf1BTdKk6M_default/index.html?videoId=6116779877001"
@@ -36,9 +40,11 @@ function allowCookie(){
   
 </script>
   
-<div class="videoContainer">
-<img class="placeholderImg" onlcick="allowCookie();" src="placeholderImg.png"/>  
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/y4ZBSzYUTL0?si=UGG8kzc_ttdZBAUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><!--
+<div id="videoContainer">
+  
+<img width="560" height="315" id="placeholderImg" onlcick="allowCookie();" src="placeholderImg.png"/>
+<iframe id="youtubeVideo" width="560" height="315" src="https://www.youtube-nocookie.com/embed/y4ZBSzYUTL0?si=UGG8kzc_ttdZBAUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 </div>  
 
   
