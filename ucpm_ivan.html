@@ -2,18 +2,52 @@
 <html>
 <head>
 <meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1'>
-
+	
+<script
+  src="https://privacyportaltrial-cdn.onetrust.com/consent-receipt-scripts/scripts/otconsent-1.0.min.js"
+  type="text/javascript"
+  data-ot-id="9fe3f618-364c-41ed-b30e-744572025583"
+  charset="UTF-8"
+  id="consent-receipt-script"
+  data-ot-consent-register-event="document-load"
+></script>
+	
 <title>ucpm_ivan</title>
 </head>
 <body>
 
-  <form id="formUCPM">
-    <input type="text" value="" id="1name"/>
-    <input type="text" value="" id="2name"/>
-    <input type="text" value="" id="email"/>
-	<input type="checkbox" value="checked" id="purpose1"/>
-    <input type="submit"id="subm"/>
-  </form>
+<form class="ot-form-consent" action="" method="post" data-ot-cp-id="ade6d42c-2c3b-420d-acf9-a6a05f3f5f01-active">
+      <input type="hidden" id="confirmation" name="receiptId" value="" />
+      <label for="inputEmail">Email</label>
+  <input type="email" id="inputEmail" class="ot-form-control" placeholder="Email" required>
+      <label for="FirstName">FirstName</label>
+  <input type="text" id="FirstName" class="ot-form-control" placeholder="FirstName">
+  <label for="LastName">LastName</label>
+  <input type="text" id="LastName" class="ot-form-control" placeholder="LastName">
+      <div class="ot-checkbox">
+    <label>
+      <input value="Newsletter" type="checkbox" > Newsletter
+    </label>
+  </div>
+  <div class="ot-ml-1"><h5>frequency</h5>
+    <div class="ot-checkbox">
+      <label>
+        <input value="daily" type="checkbox" > daily
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="weekly" type="checkbox" > weekly
+      </label>
+    </div>
+    <div class="ot-checkbox">
+      <label>
+        <input value="monthly" type="checkbox" > monthly
+      </label>
+    </div>
+  </div>
+      <button id="trigger" class="ot-submit-button" type="submit">Submit form</button>
+</form>
 	
 </body>
 </html>
