@@ -34,8 +34,9 @@ function OptanonWrapper() { }
 
 <script>
 function allowCookie(){
-  alert("You need to enable cookies to play this video");
+  alert("You enabled cookies so yo ucan see the video. IMG tag display:none");
   OneTrust.AllowAll();
+  document.querySelector("#placeholderImg").style.display = "none";
 }
   
 </script>
