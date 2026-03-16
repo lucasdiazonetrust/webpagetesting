@@ -18,10 +18,29 @@ function OptanonWrapper() { }
 <h4>Chanel worldwide frameworks</h4>
 	
 <script>
-	var geo = OneTrust.getGeolocationData();
-document.onload  = function(){
-	alert("we are in: " + geo)
-}	
+
+<script>
+  function alertWhenOneTrustIsReady() {
+    function handler() {
+      if (window.OneTrust) {
+        alert("OneTrust SDK is available");
+        window.removeEventListener("OneTrustGroupsUpdated", handler);
+      }
+    }
+
+    // Works even if OneTrust loads after this script
+    window.addEventListener("OneTrustGroupsUpdated", handler);
+
+    // Safety: if OneTrust already loaded before listener registration
+    if (window.OneTrust) {
+      handler();
+    }
+  }
+
+  // Call immediately (not tied to document.onload)
+  alertWhenOneTrustIsReady();
+</script>
+	
 </script>
 	
 <hr>
