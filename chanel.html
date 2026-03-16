@@ -18,8 +18,9 @@ function OptanonWrapper() { }
 <h4>Chanel worldwide frameworks</h4>
 	
 <script>
-document.onLoad = function(){
-	alert("we are in: "+OneTrust.getGeolocationData())
+	var geo = OneTrust.getGeolocationData();
+document.onload  = function(){
+	alert("we are in: " + geo)
 }	
 </script>
 	
