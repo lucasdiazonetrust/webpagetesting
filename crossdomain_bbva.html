@@ -28,21 +28,27 @@ iframe{
     secret = CryptoJS.enc.Base64.stringify(secret).replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '')
     
     return header+"."+claim+"."+secret
+	
 }
 </script>
 
 	<script>
 	function login(){
+		localStorage.setItem('jwttokenot', generateJWT(dsIdentifier,secret));
 		var userOT = document.querySelector("body > form > input[type=text]");
+
+		localStorage.setItem('jwttokenot', generateJWT(dsIdentifier,secret));
+		alert("loged in and pushed toke: "+jwttokenot);
+	}
+	</script>
+	<script>
 		var OneTrust = {
       		dataSubjectParams: {
           		id: userOT,
           		isAnonymous: false,
-          		token : generateJWT (userOT, "b7f3c1a4e2d8f9a1c6e7b3d4a9f2c8e1d3b6a7c9f0e4d1b2a8c3f7e6d5b1a0c9")
+          		token : sessionStorage.getItem(jwttokenot)
       		}
 		};
-		alert("loged in and pushed toke: "+generateJWT (userOT, "b7f3c1a4e2d8f9a1c6e7b3d4a9f2c8e1d3b6a7c9f0e4d1b2a8c3f7e6d5b1a0c9"));
-	}
 	</script>
 	
 <!--<script>
