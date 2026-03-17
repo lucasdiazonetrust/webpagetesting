@@ -39,9 +39,7 @@ iframe{
 
 		localStorage.setItem('jwttokenot', generateJWT(dsIdentifier,secret));
 		alert("loged in and pushed toke: "+jwttokenot);
-	}
-	</script>
-	<script>
+
 		var OneTrust = {
       		dataSubjectParams: {
           		id: userOT,
@@ -49,6 +47,16 @@ iframe{
           		token : sessionStorage.getItem(jwttokenot)
       		}
 		};
+		OptanonWrapper();
+	}
+
+		
+	</script>
+	<script>
+
+
+
+		
 	</script>
 	
 <!--<script>
