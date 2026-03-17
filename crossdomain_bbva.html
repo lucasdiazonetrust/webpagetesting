@@ -10,6 +10,22 @@ iframe{
 	max-width:500px;
 }
 </style>
+
+<script>
+	function generateJWT(dsIdentifier,secret){
+    
+    var header = {"alg": "HS256","typ": "JWT"}
+    header = btoa(JSON.stringify(header)).replaceAll("=","")
+    
+    var claim = {"sub":dsIdentifier}
+    claim = btoa(JSON.stringify(claim)).replaceAll("=","")
+    
+    var secret = CryptoJS.HmacSHA256(header+"."+claim,secret)
+    secret = CryptoJS.enc.Base64.stringify(secret).replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '')
+    
+    return header+"."+claim+"."+secret
+}
+</script>
 	
 <script>
 var OneTrust = {
@@ -20,6 +36,8 @@ var OneTrust = {
       }
 };
 </script>
+
+	
 
 
 <!-- OptanonConsentNoticeStart -->
