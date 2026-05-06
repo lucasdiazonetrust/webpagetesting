@@ -39,10 +39,10 @@ function OptanonWrapper() { }
         event.preventDefault(); // prevent PageReLoad
         $('.error').css('display', 'none'); // hide error msg
 
-        var ValEmail = $('#username').val('admin@admin.com'); // Email Value
-        var ValPassword = $('#password').val('admin'); // Password Value
+        var ValEmail = $('#username'); // Email Value
+        var ValPassword = $('#password'); // Password Value
 
-        if (ValEmail === true & ValPassword === true) { // if ValEmail & ValPass are as above
+        if (ValEmail == "admin@admin.com" & ValPassword == "admin") { // if ValEmail & ValPass are as above
             alert('valid!'); // alert valid!
             window.location = "home.html"; // go to home.html
         }
