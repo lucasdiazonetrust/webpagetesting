@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1'>
+<link rel="icon" type="image/x-icon" href="favicon2.ico">
+
+<!-- OneTrust Cookies Consent Notice start for lucasdiazonetrust.github.io/webpagetesting/bsr.html -->
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="019d6e0c-e063-7bcb-b25d-7d863fe8303a-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for lucasdiazonetrust.github.io/webpagetesting/bsr.html -->
+    
+<title>login page 2</title>
+</head>
+<body>
+
+
+<form class="loginbox" autocomplete="off" name="loginwebform2">
+    <fieldset>
+        <p style="display: none;" class="error">Error. Please enter correct email &amp; password.</p>
+        <p>E-mail</p>
+        <input type="text" id="username" name="username"/>
+        <p>Password</p>
+        <input type="password" id="password" name="password"/>
+        <input type="submit" id="submit" value="LOG IN" name="loginbutton"/>
+    </fieldset>
+</form>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Focus username input
+  document.querySelector("#username").focus();
+
+  document.querySelector("#submit").addEventListener("click", function (event) {
+    event.preventDefault(); // prevent page reload
+
+    // Hide error message
+    document.querySelectorAll(".error").forEach(el => {
+      el.style.display = "none";
+    });
+
+    // Get input VALUES (not elements)
+    const valEmail = document.querySelector("#username").value;
+    const valPassword = document.querySelector("#password").value;
+
+    if (valEmail == "admin" && valPassword == "admin") {
+      alert("valid!");
+      window.location.href = "loginhome.html";
+    } else {
+      alert(
+        "not valid! password: " + valPassword + " val email: " + valEmail
+      );
+
+      // Show error message
+      document.querySelectorAll(".error").forEach(el => {
+        el.style.display = "block";
+      });
+    }
+  });
+});
+
+</script>
+	
+</body>
+</html>
