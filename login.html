@@ -11,8 +11,6 @@
 function OptanonWrapper() { }
 </script>
 <!-- OneTrust Cookies Consent Notice end for lucasdiazonetrust.github.io/webpagetesting/bsr.html -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
 <title>login page</title>
 </head>
@@ -31,27 +29,39 @@ function OptanonWrapper() { }
 </form>
 
 <script>
-    $(document).ready(function() {
-    $('#username').focus();
 
-    $('#submit').click(function() {
+document.addEventListener("DOMContentLoaded", function () {
+  // Focus username input
+  document.querySelector("#username").focus();
 
-        event.preventDefault(); // prevent PageReLoad
-        $('.error').css('display', 'none'); // hide error msg
+  document.querySelector("#submit").addEventListener("click", function (event) {
+    event.preventDefault(); // prevent page reload
 
-        var ValEmail = $('#username'); // Email Value
-        var ValPassword = $('#password'); // Password Value
-
-        if (ValEmail == "admin@admin.com" & ValPassword == "admin") { // if ValEmail & ValPass are as above
-            alert('valid!'); // alert valid!
-            window.location = "home.html"; // go to home.html
-        }
-        else {
-            alert('not valid! password: '+ ValPassword + 'val email: '+ValEmail); // alert not valid!
-            $('.error').css('display', 'block'); // show error msg
-        }
+    // Hide error message
+    document.querySelectorAll(".error").forEach(el => {
+      el.style.display = "none";
     });
+
+    // Get input VALUES (not elements)
+    const valEmail = document.querySelector("#username").value;
+    const valPassword = document.querySelector("#password").value;
+
+    if (valEmail == "admin" && valPassword == "admin") {
+      alert("valid!");
+      window.location.href = "home.html";
+    } else {
+      alert(
+        "not valid! password: " + valPassword + " val email: " + valEmail
+      );
+
+      // Show error message
+      document.querySelectorAll(".error").forEach(el => {
+        el.style.display = "block";
+      });
+    }
+  });
 });
+
 </script>
 	
 </body>
