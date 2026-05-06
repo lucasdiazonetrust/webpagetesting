@@ -1,3 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1'>
+<link rel="icon" type="image/x-icon" href="favicon2.ico">
+
+<!-- OneTrust Cookies Consent Notice start for lucasdiazonetrust.github.io/webpagetesting/bsr.html -->
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="019d6e0c-e063-7bcb-b25d-7d863fe8303a-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for lucasdiazonetrust.github.io/webpagetesting/bsr.html -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+<title>login page</title>
+</head>
+<body>
+
+    <script>
+    $(document).ready(function() {
+    $('#username').focus();
+
+    $('#submit').click(function() {
+
+        event.preventDefault(); // prevent PageReLoad
+        $('.error').css('display', 'none'); // hide error msg
+
+        var ValEmail = $('#username').val('admin@admin.com'); // Email Value
+        var ValPassword = $('#password').val('admin'); // Password Value
+
+        if (ValEmail === true & ValPassword === true) { // if ValEmail & ValPass are as above
+            alert('valid!'); // alert valid!
+            window.location = "home.html"; // go to home.html
+        }
+        else {
+            alert('not valid!'); // alert not valid!
+            $('.error').css('display', 'block'); // show error msg
+        }
+    });
+});
+    </script>
 <form class="loginbox" autocomplete="off">
     <fieldset>
         <p style="display: none;" class="error">Error. Please enter correct email &amp; password.</p>
@@ -8,3 +51,8 @@
         <input type="submit" id="submit" value="LOG IN" />
     </fieldset>
 </form>
+	
+</body>
+</html>
+
+
