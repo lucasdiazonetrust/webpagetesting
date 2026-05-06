@@ -17,14 +17,14 @@ function OptanonWrapper() { }
 <body>
 
 
-<form class="loginbox" autocomplete="off">
+<form class="loginbox" autocomplete="off" name="loginwebform">
     <fieldset>
         <p style="display: none;" class="error">Error. Please enter correct email &amp; password.</p>
         <p>E-mail</p>
-        <input type="text" id="username" />
+        <input type="text" id="username" name="username"/>
         <p>Password</p>
-        <input type="password" id="password" />
-        <input type="submit" id="submit" value="LOG IN" />
+        <input type="password" id="password" name="password"/>
+        <input type="submit" id="submit" value="LOG IN" name="loginbutton"/>
     </fieldset>
 </form>
 
