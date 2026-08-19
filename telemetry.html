@@ -26,7 +26,7 @@ function OptanonWrapper() { }
 function installTelemetryCookie() {
 	const expiryDate = new Date();
 	expiryDate.setMonth(expiryDate.getMonth() + 1);
-	document.cookie = "cookie=1234; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
+	document.cookie = "cookieT=1234; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
 
 	alert("Cookie installed successfully!");
 }
