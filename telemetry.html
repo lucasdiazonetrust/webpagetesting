@@ -22,18 +22,21 @@ function OptanonWrapper() { }
 <hr>
 <iframe src="https://player.vimeo.com/video/76979871" width="200" height="auto" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
-<button onclick="installTelemetryCookie()">
-Install Telemetry Cookie
-</button>
-	
 <script>
 function installTelemetryCookie() {
 	const expiryDate = new Date();
 	expiryDate.setMonth(expiryDate.getMonth() + 1);
-	document.cookie = "cookie=1234; expires=" + expiryDate.toUTCString()"; path=/; SameSite=Lax";
-alert("Cookie installed successfully!");
+	document.cookie = "cookie=1234; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
+
+	alert("Cookie installed successfully!");
 }
 </script>
+	
+<button onclick="installTelemetryCookie()">
+Install Telemetry Cookie
+</button>
+	
+
 
 	
 </body>
