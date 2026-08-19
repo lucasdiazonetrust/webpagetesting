@@ -18,9 +18,9 @@
 function installTelemetryCookie() {
 	const expiryDate = new Date();
 	expiryDate.setMonth(expiryDate.getMonth() + 1);
-	document.cookie = "cookieLoca2=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
+	document.cookie = "testingCookieTelemetry=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
 
-	alert("Cookie cookieLoca installed successfully!");
+	alert("Cookie testingCookieTelemetry installed successfully!");
 }
 </script>
 	
