@@ -1,1 +1,36 @@
-https://privacyportaltrial-cdn.onetrust.com/storage-container/9fe3f618-364c-41ed-b30e-744572025583/privacy-notices/48745cc5-a766-42ee-928e-6acb9ed4075d/published/privacynotice.json
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PNM render</title>
+    <link rel="stylesheet" href="styles.css" />
+
+
+  </head>
+  <body>
+	<h1>PNM</h1>
+
+    <script>
+
+const metadata = await fetch('https://privacyportaltrial-cdn.onetrust.com/storage-container/9fe3f618-364c-41ed-b30e-744572025583/privacy-notices/48745cc5-a766-42ee-928e-6acb9ed4075d/published/privacynotice.json').then(r => r.json());
+      
+console.log(metadata);
+function renderNotice(notice) {
+  let html = '';
+
+  notice.sections.forEach(section => {
+      html += `
+        <section>
+            <h2>${section.title}</h2>
+            <div>${section.content}</div>
+        </section>
+      `;
+  });
+
+  return html;
+}
+
+    
+  </body>
+</html>
+
+
