@@ -3,6 +3,7 @@ function installCookie() {
 	expiryDate.setMonth(expiryDate.getMonth() + 1);
 	document.cookie = "testingCookie_telemetry=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
 	console.log("Cookie testingCookieTelemetry installed successfully!");
+	alert("Cookie testingCookieTelemetry installed successfully!");
 }
 
 const EXPIRY_DATE = new Date('2026-12-31T23:59:59Z').getTime();
@@ -17,6 +18,7 @@ function setLocalStorage(key, value) {
   };
   localStorage.setItem(key, JSON.stringify(item));
   console.log(getLocalStorage('LocalStorage_telemetry'));
+  alert("localStorage installed successfully!: "+getLocalStorage('LocalStorage_telemetry'));
 }
 
 function getLocalStorage(key) {
@@ -41,6 +43,7 @@ function setSessionStorage(key, value) {
   };
   sessionStorage.setItem(key, JSON.stringify(item));
   console.log(getSessionStorage('SessionStorage_telemetry'));
+  alert("sessionStorage installed successfully!: "+getSessionStorage('SessionStorage_telemetry'));
 }
 
 function getSessionStorage(key) {
