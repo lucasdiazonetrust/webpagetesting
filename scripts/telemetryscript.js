@@ -13,16 +13,6 @@ const EXPIRY_DATE = new Date('2026-12-31T23:59:59Z').getTime();
 
  /*LOCAL STORAGE*/
 
-function setLocalStorage(key, value) {
-  const item = {
-    value,
-    expiry: EXPIRY_DATE
-  };
-  localStorage.setItem(key, JSON.stringify(item));
-  console.log(getLocalStorage('LocalStorage_telemetry'));
-  alert("localStorage installed successfully!"+getLocalStorage('LocalStorage_telemetry'));
-}
-
 function getLocalStorage(key) {
   const itemStr = localStorage.getItem(key);
   if (!itemStr) return null;
@@ -37,16 +27,19 @@ function getLocalStorage(key) {
   return item.value;
 }
 
-/*SESSION STORAGE*/
-function setSessionStorage(key, value) {
+function setLocalStorage(key, value) {
   const item = {
     value,
     expiry: EXPIRY_DATE
   };
-  sessionStorage.setItem(key, JSON.stringify(item));
-  console.log(getSessionStorage('SessionStorage_telemetry'));
-  alert("sessionStorage installed successfully!"+getSessionStorage('SessionStorage_telemetry'));
+  localStorage.setItem(key, JSON.stringify(item));
+  console.log(getLocalStorage('LocalStorage_telemetry'));
+  alert("localStorage installed successfully!"+getLocalStorage('LocalStorage_telemetry'));
 }
+
+
+
+/*SESSION STORAGE*/
 
 function getSessionStorage(key) {
   const itemStr = sessionStorage.getItem(key);
@@ -61,3 +54,15 @@ function getSessionStorage(key) {
 
   return item.value;
 }
+
+function setSessionStorage(key, value) {
+  const item = {
+    value,
+    expiry: EXPIRY_DATE
+  };
+  sessionStorage.setItem(key, JSON.stringify(item));
+  console.log(getSessionStorage('SessionStorage_telemetry'));
+  alert("sessionStorage installed successfully!"+getSessionStorage('SessionStorage_telemetry'));
+}
+
+
