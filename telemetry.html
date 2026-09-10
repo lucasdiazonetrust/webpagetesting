@@ -19,23 +19,21 @@ function installCookie() {
 	const expiryDate = new Date();
 	expiryDate.setMonth(expiryDate.getMonth() + 1);
 	document.cookie = "testingCookie_telemetry=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
-
 	console.log("Cookie testingCookieTelemetry installed successfully!");
 }
 
-	// Expiration date: 31 Dec 2026 23:59:59 UTC
 const EXPIRY_DATE = new Date('2026-12-31T23:59:59Z').getTime();
 
-/**
- * LOCAL STORAGE
- */
+
+ /*LOCAL STORAGE*/
+
 function setLocalStorage(key, value) {
   const item = {
     value,
     expiry: EXPIRY_DATE
   };
   localStorage.setItem(key, JSON.stringify(item));
-  console.log(getLocalStorage('userConsent_telemetry'));
+  console.log(getLocalStorage('LocalStorage_telemetry'));
 }
 
 function getLocalStorage(key) {
@@ -52,16 +50,14 @@ function getLocalStorage(key) {
   return item.value;
 }
 
-/**
- * SESSION STORAGE
- */
+/*SESSION STORAGE*/
 function setSessionStorage(key, value) {
   const item = {
     value,
     expiry: EXPIRY_DATE
   };
   sessionStorage.setItem(key, JSON.stringify(item));
-  console.log(getSessionStorage('sessionId_telemetry'));
+  console.log(getSessionStorage('SessionStorage_telemetry'));
 }
 
 function getSessionStorage(key) {
@@ -78,21 +74,11 @@ function getSessionStorage(key) {
   return item.value;
 }
 
-/* Usage */
-
-
-
-
-
-	
 </script>
 	
 <button onclick="installCookie();">Install cookie</button>
-<button onclick="setLocalStorage('userConsent_telemetry', true);">Install Local Storage</button>
-<button onclick="setSessionStorage('sessionId_telemetry', 'abc123');">Install Session Storage</button>
-	
-
-
+<button onclick="setSessionStorage('SessionStorage_telemetry', 'Session storage value');">Install Session Storage</button>
+<button onclick="setLocalStorage('LocalStorage_telemetry', 'Local storage value');">Install Local Storage</button>
 	
 </body>
 </html>
