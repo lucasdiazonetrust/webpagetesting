@@ -18,7 +18,7 @@ function setLocalStorage(key, value) {
   };
   localStorage.setItem(key, JSON.stringify(item));
   console.log(getLocalStorage('LocalStorage_telemetry'));
-  alert("localStorage installed successfully!: "+getLocalStorage('LocalStorage_telemetry'));
+  alert("localStorage installed successfully!: "+value);
 }
 
 function getLocalStorage(key) {
@@ -43,7 +43,7 @@ function setSessionStorage(key, value) {
   };
   sessionStorage.setItem(key, JSON.stringify(item));
   console.log(getSessionStorage('SessionStorage_telemetry'));
-  alert("sessionStorage installed successfully!: "+getSessionStorage('SessionStorage_telemetry'));
+  alert("sessionStorage installed successfully!: "+value);
 }
 
 function getSessionStorage(key) {
