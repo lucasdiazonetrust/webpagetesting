@@ -18,15 +18,76 @@
 function installTelemetryCookie() {
 	const expiryDate = new Date();
 	expiryDate.setMonth(expiryDate.getMonth() + 1);
-	document.cookie = "testingCookieTelemetry=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
+	document.cookie = "testingCookie_telemetry=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
 
-	alert("Cookie testingCookieTelemetry installed successfully!");
+	console.log("Cookie testingCookieTelemetry installed successfully!");
 }
+
+	// Expiration date: 31 Dec 2026 23:59:59 UTC
+const EXPIRY_DATE = new Date('2026-12-31T23:59:59Z').getTime();
+
+/**
+ * LOCAL STORAGE
+ */
+function setLocalStorage(key, value) {
+  const item = {
+    value,
+    expiry: EXPIRY_DATE
+  };
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
+function getLocalStorage(key) {
+  const itemStr = localStorage.getItem(key);
+  if (!itemStr) return null;
+
+  const item = JSON.parse(itemStr);
+
+  if (Date.now() > item.expiry) {
+    localStorage.removeItem(key);
+    return null;
+  }
+
+  return item.value;
+}
+
+/**
+ * SESSION STORAGE
+ */
+function setSessionStorage(key, value) {
+  const item = {
+    value,
+    expiry: EXPIRY_DATE
+  };
+  sessionStorage.setItem(key, JSON.stringify(item));
+}
+
+function getSessionStorage(key) {
+  const itemStr = sessionStorage.getItem(key);
+  if (!itemStr) return null;
+
+  const item = JSON.parse(itemStr);
+
+  if (Date.now() > item.expiry) {
+    sessionStorage.removeItem(key);
+    return null;
+  }
+
+  return item.value;
+}
+
+/* Usage */
+
+
+
+console.log(getLocalStorage('userConsent_telemetry'));
+console.log(getSessionStorage('sessionId_telemetry'));
+	
 </script>
 	
-<button onclick="installTelemetryCookie()">
-Install random cookie
-</button>
+<button onclick="installCookie()">Install cookie</button>
+<button onclick="setLocalStorage('userConsent_telemetry', true);">Install Local Storage</button>
+<button onclick="setSessionStorage('sessionId_telemetry', 'abc123');">Install Session Storage</button>
 	
 
 
