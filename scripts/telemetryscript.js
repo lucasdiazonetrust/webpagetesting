@@ -24,7 +24,7 @@ function getLocalStorage(key) {
     return null;
   }
 
-  return item.value + itemStr;
+  return item.value + key;
 }
 
 function setLocalStorage(key, value) {
@@ -52,7 +52,7 @@ function getSessionStorage(key) {
     return null;
   }
 
-  return item.value + itemStr;
+  return item.value + key;
 }
 
 function setSessionStorage(key, value) {
