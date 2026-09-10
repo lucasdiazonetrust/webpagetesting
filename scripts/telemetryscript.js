@@ -18,7 +18,7 @@ function setLocalStorage(key, value) {
   };
   localStorage.setItem(key, JSON.stringify(item));
   console.log(getLocalStorage('LocalStorage_telemetry'));
-  alert("localStorage installed successfully!+item");
+  alert("localStorage installed successfully!"+item);
 }
 
 function getLocalStorage(key) {
