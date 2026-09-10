@@ -15,7 +15,7 @@
 <h1>telemetry script page with OT telemetry script only</h1>
 
 <script>
-function installTelemetryCookie() {
+function installCookie() {
 	const expiryDate = new Date();
 	expiryDate.setMonth(expiryDate.getMonth() + 1);
 	document.cookie = "testingCookie_telemetry=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
@@ -87,7 +87,7 @@ function getSessionStorage(key) {
 	
 </script>
 	
-<button onclick="installCookie()">Install cookie</button>
+<button onclick="installCookie();">Install cookie</button>
 <button onclick="setLocalStorage('userConsent_telemetry', true);">Install Local Storage</button>
 <button onclick="setSessionStorage('sessionId_telemetry', 'abc123');">Install Session Storage</button>
 	
