@@ -3,9 +3,9 @@
 <head>
 <meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1'>
 <link rel="icon" type="image/x-icon" href="favicon2.ico">
-<link type="css" href="/css/telemetry.css">
-<link type="js" href="/scripts/telemetryscripts.js">
-	
+<link rel="stylesheet" href="/css/telemetry.css">
+<script src="/scripts/telemetryscripts.js" defer></script>
+
 <title>Telemetry script</title>
 	
 <!-- OneTrust Cookies Consent Notice start for lucasdiazonetrust.github.io/webpagetesting/telemetry.html -->
@@ -17,64 +17,7 @@
 <h1>telemetry script page with OT telemetry script only</h1>
 
 <script>
-function installCookie() {
-	const expiryDate = new Date();
-	expiryDate.setMonth(expiryDate.getMonth() + 1);
-	document.cookie = "testingCookie_telemetry=22222; expires="+expiryDate.toUTCString()+"; path=/; SameSite=Lax";
-	console.log("Cookie testingCookieTelemetry installed successfully!");
-}
 
-const EXPIRY_DATE = new Date('2026-12-31T23:59:59Z').getTime();
-
-
- /*LOCAL STORAGE*/
-
-function setLocalStorage(key, value) {
-  const item = {
-    value,
-    expiry: EXPIRY_DATE
-  };
-  localStorage.setItem(key, JSON.stringify(item));
-  console.log(getLocalStorage('LocalStorage_telemetry'));
-}
-
-function getLocalStorage(key) {
-  const itemStr = localStorage.getItem(key);
-  if (!itemStr) return null;
-
-  const item = JSON.parse(itemStr);
-
-  if (Date.now() > item.expiry) {
-    localStorage.removeItem(key);
-    return null;
-  }
-
-  return item.value;
-}
-
-/*SESSION STORAGE*/
-function setSessionStorage(key, value) {
-  const item = {
-    value,
-    expiry: EXPIRY_DATE
-  };
-  sessionStorage.setItem(key, JSON.stringify(item));
-  console.log(getSessionStorage('SessionStorage_telemetry'));
-}
-
-function getSessionStorage(key) {
-  const itemStr = sessionStorage.getItem(key);
-  if (!itemStr) return null;
-
-  const item = JSON.parse(itemStr);
-
-  if (Date.now() > item.expiry) {
-    sessionStorage.removeItem(key);
-    return null;
-  }
-
-  return item.value;
-}
 
 </script>
 	
